@@ -1,3 +1,22 @@
+<?php
+
+if (isset($_POST['submit'])) {
+    $title = $_POST['title'];
+    $useremail = $_POST['email'];
+    $message = $_POST['msg'];
+    $conn = mysqli_connect("localhost", "", "", "");
+    $sql = "INSERT INTO reports (email, title, message)
+					VALUES ('$useremail', '$title', '$message')";
+    $run_query = mysqli_query($conn, $sql);
+
+    if($run_query) {
+        
+    } else {
+        echo "Bir Hata Oluştu!";
+    };
+};
+?>
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -5,9 +24,9 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-	<meta name="description" content="TORBACI">
-	<meta name="author" content="torbacı huseyın">
-	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz">
+  <meta name="description" content="TORBACI">
+  <meta name="author" content="torbacı huseyın">
+  <meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz">
   <meta name="msapplication-tap-highlight" content="no">
   <link href="assets/pp.png" rel="shortcut icon" />
   <meta property="og:title" content="Torbaci Huseyin" />
@@ -86,7 +105,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.html" title="">
+        <a class="navbar-brand" href="./index.php" title="">
           <img src="./assets/icon.png" class="navbar-logo-img" alt="">
           TORBACİ HUSEYIN
         </a>
@@ -94,7 +113,7 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="./index.html" title="">Ana Sayfa</a></li>
+          <li><a href="./index.php" title="">Ana Sayfa</a></li>
           <li><a href="#services" title="" data-target="#services" aria-expanded="false">Hizmetler</a></li>
           <li><a href="old/" title="">Eski Site</a></li>
           <li>
@@ -220,6 +239,27 @@
                         </p>
                         <a href="https://devlet.nomee6.xyz" class="btn btn-primary" title="">
                           E-Devlete Git
+                        </a>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <img class="img-responsive" src="./assets/iskur.jpg" alt="First slide">
+                      <div class="carousel-caption card-shadow reveal">
+
+                        <h3>NOMEE6 İŞKUR</h3>
+                          <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            <span class="sr-only">Önceki</span>
+                          </a>
+                          <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <span class="sr-only">Sonraki</span>
+                          </a>
+                        <p>
+                          Nomee6 İŞKUR ile iş bulabilir ve iş hayatına atılabilir veya kendi firmanızı kurup İşveren olabilirsiniz. 
+                        </p>
+                        <a href="https://iskur.nomee6.xyz" class="btn btn-primary" title="">
+                          İŞKUR'a Git
                         </a>
                       </div>
                   </div>
@@ -351,7 +391,7 @@
           </div>
           <div class="card-container">
             <div class="card card-shadow col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 reveal">
-              <form action="" class="reveal-content">
+              <form action="" class="reveal-content" method="POST">
                 <div class="row">
                   <div class="col-md-7">
                     <div class="form-group">
@@ -363,7 +403,7 @@
                     <div class="form-group">
                       <textarea name="msg" class="form-control" rows="3" placeholder="İletiniz"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Gönder</button>
+                    <button name="submit" type="submit" class="btn btn-primary">Gönder</button>
                   </div>
                   <div class="col-md-5">
                     <ul class="list-unstyled address-container">
@@ -383,6 +423,20 @@
       </div>
     </div>
   </div>
+  
+              <section class="section-container">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-center">Mobil Uygulama</h2>
+                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende eğlenebilirsiniz. (Geliştirme aşamasındadır.)</p>
+                        <div class="col-md-5">
+                            <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img src="assets/apk.png" alt="">APK İndir</a>
+                        </div>
+                    </div>
+
+                    <img src="assets/mobilapp.png" alt="" class="reveal img-responsive reveal-content image-center">
+                </div>
+            </section>
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
     navbarFixedTopAnimation();
