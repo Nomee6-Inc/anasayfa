@@ -24,21 +24,23 @@ if (isset($_POST['submit'])) {
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta name="description" content="TORBACI">
-  <meta name="author" content="torbacı huseyın">
-  <meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz">
-  <meta name="msapplication-tap-highlight" content="no">
-  <link href="assets/pp.png" rel="shortcut icon" />
-  <meta property="og:title" content="Torbaci Huseyin" />
-  <meta property="og:description" content="Torbaci Huseyinin Kişisel Websitesi." />
-  <meta property="og:locale" content="tr_TR" />
-  <meta property="og:url" content="https://nomee6.xyz" />
-  <meta property="og:site_name" content="TORBACİ HUSEYİN" />
-  <meta property="og:image" content="https://nomee6.xyz/assets/A.png" />
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/pp.png">
-  <title>TORBACI HUSEYIN</title>
-  <link href="./main.css" rel="stylesheet"></head>
+	<meta name="description" content="TORBACI">
+	<meta name="author" content="Ali Yasin Yeşilyaprak">
+	<meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
+	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="assets/pp.png" rel="shortcut icon" />
+    <meta property="og:title" content="Torbaci Huseyin" />
+    <meta property="og:description" content="Torbaci Huseyinin Kişisel Websitesi." />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:url" content="https://nomee6.xyz" />
+    <meta property="og:site_name" content="TORBACİ HUSEYİN" />
+    <meta property="og:image" content="https://nomee6.xyz/assets/A.png" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/pp.png">
+    
+    <title>TORBACI HUSEYIN</title>
+    <link href="./main.css" rel="stylesheet"></head>
 		<!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -118,7 +120,7 @@ if (isset($_POST['submit'])) {
           <li><a href="old/" title="">Eski Site</a></li>
           <li>
             <p>
-              <a href="./donate.html" class="btn btn-default navbar-btn" title="">Bağış Yap</a>
+              <a href="./donate" class="btn btn-default navbar-btn" title="">Bağış Yap</a>
             </p>
           </li>
 
@@ -127,7 +129,6 @@ if (isset($_POST['submit'])) {
     </div>
   </nav>
 </header>
-
   <div class="hero-full-container background-image-container white-text-container">
     <div class="container">
       <div class="row">
@@ -160,7 +161,10 @@ if (isset($_POST['submit'])) {
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
             <h2>Resmi Açıklama</h2>
-            <p>Bu websitesi tamamen mizah amaçlı olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır. Bunu göz önünde bulundurarak hareket ediniz.</p>
+            <p>Bu websitesi tamamen mizah amaçlı olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır.<br>
+            Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neşriyat kanunları uyarınca 18 yaşından küçüklerin girmesi alışveriş yapması kesinlikle yasaktır.
+            Uygunsuz girişlerin yapılması durumunda Nomee6 Inc. hiç bir şekilde sorumlu tutulamaz...
+            </p>
           </div>
        </div>
       </div>
@@ -284,6 +288,27 @@ if (isset($_POST['submit'])) {
                       </a>
                     </div>
                 </div>
+                <div class="item">
+                      <img class="img-responsive" src="./assets/nomee6evlilik.png" alt="First slide">
+                      <div class="carousel-caption card-shadow reveal">
+
+                        <h3>NOMEE6 Evlilik</h3>
+                          <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            <span class="sr-only">Önceki</span>
+                          </a>
+                          <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <span class="sr-only">Sonraki</span>
+                          </a>
+                        <p>
+                          Nomee6 Evlilik ile aradığınız hayatınızın eşini bulabilirsiniz veya ilişkiler kurabilirsiniz. 
+                        </p>
+                        <a href="https://evlilik.nomee6.xyz" class="btn btn-primary" title="">
+                          NOMEE6 Evliliğe Git
+                        </a>
+                      </div>
+                  </div>
                 </div>
             </div>
           </div>
@@ -381,7 +406,7 @@ if (isset($_POST['submit'])) {
     </div>
   </div>
   
-  <div class="section-container contact-container">
+  <div id="contact" class="section-container contact-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-12">
@@ -430,7 +455,7 @@ if (isset($_POST['submit'])) {
                         <h2 class="text-center">Mobil Uygulama</h2>
                         <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende eğlenebilirsiniz. (Geliştirme aşamasındadır.)</p>
                         <div class="col-md-5">
-                            <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img src="assets/apk.png" alt="">APK İndir</a>
+                            <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img alt="">APK İndir</a>
                         </div>
                     </div>
 
@@ -454,6 +479,11 @@ if (isset($_POST['submit'])) {
         <div class="row">
           <div class="col-xs-12 col-sm-7">
             <p><small>NOMEE6 Inc. & Nomee6 Devlet Inc.</small>
+            
+            <h3>Yararlı Linkler:</h3>
+            <h4><a href="https://status.nomee6.xyz" style="text-decoration: none">NOMEE6 Status</a></h4>
+            <h4><a href="https://nomee6.xyz/privacy" style="text-decoration: none">Gizlilik</a></h4>
+            <h4><a href="https://devlet.nomee6.xyz/developer" style="text-decoration: none">E-Devlet Developer Portal</a></h4>
             </p>
           </div>
           <div class="col-xs-12 col-sm-5">
