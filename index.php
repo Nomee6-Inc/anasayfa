@@ -21,13 +21,13 @@ if (isset($_POST['submit'])) {
 <html lang="tr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-	<meta name="description" content="TORBACI">
-	<meta name="author" content="Ali Yasin Yeşilyaprak">
-	<meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
-	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta name="description" content="TORBACI">
+    <meta name="author" content="Ali Yasin Yeşilyaprak">
+    <meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
+    <meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
     <meta name="msapplication-tap-highlight" content="no">
     <link href="assets/pp.png" rel="shortcut icon" />
     <meta property="og:title" content="Torbaci Huseyin" />
@@ -96,6 +96,14 @@ if (isset($_POST['submit'])) {
       xhr.send();
   });
 </script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "cp7t4rmvc6");
+</script>
+</head>
 <body>
 <header>
   <nav class="navbar navbar-default active">
