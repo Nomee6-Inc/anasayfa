@@ -56,10 +56,10 @@ if (isset($_POST['submit'])) {
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-	<meta name="description" content="TORBACI">
-	<meta name="author" content="Ali Yasin Yeşilyaprak">
-	<meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
-	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbac, huseyn, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giri, devlet, türkiye, turkey, turkiye">
+  <meta name="description" content="TORBACI">
+  <meta name="author" content="Ali Yasin Yeşilyaprak">
+  <meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
+  <meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbac, huseyn, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giri, devlet, türkiye, turkey, turkiye">
     <link href="assets/pp.png" rel="shortcut icon" />
     <meta property="og:title" content="Torbaci Huseyin" />
     <meta property="og:description" content="Torbaci Huseyinin Kişisel Websitesi." />
@@ -73,23 +73,6 @@ if (isset($_POST['submit'])) {
     <title>TORBACI HUSEYIN</title>
     <link href="./main.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   
-      ym(86917472, "init", {
-           clickmap:true,
-           trackLinks:true,
-           accurateTrackBounce:true,
-           webvisor:true,
-           ecommerce:"dataLayer"
-      });
-   </script>
-   <noscript><div><img src="https://mc.yandex.ru/watch/86917472" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-   <!-- /Yandex.Metrika counter -->
-
    <!-- Matomo -->
    <script>
      var _paq = window._paq = window._paq || [];
@@ -133,7 +116,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Gezinti Çubuğunu Aç</span>
+          <span class="sr-only">Gezinti Çubuunu Aç</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -152,7 +135,7 @@ if (isset($_POST['submit'])) {
           <li><a href="old/" title="">Eski Site</a></li>
           <li>
             <p>
-              <a href="./donate" class="btn btn-default navbar-btn" title="">Bağış Yap</a>
+              <a href="./donate" class="btn btn-default navbar-btn" title="">Bağş Yap</a>
             </p>
           </li>
 
@@ -192,8 +175,8 @@ if (isset($_POST['submit'])) {
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
-            <h2>Resmi Açıklama</h2>
-            <p>Bu websitesi tamamen mizah amaçlı ve hayal ürünü olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır.<br>
+            <h2>Resmi Açklama</h2>
+            <p>Bu websitesi tamamen mizah amaçlı ve hayal ürünü olup, hiçbir kurum, kuruluş, kişi veya örgtü hedef almamaktadır.<br>
             Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neriyat kanunları uyarınca 18 yaşından küçüklerin girmesi alışveriş yapması kesinlikle yasaktır.
             Uygunsuz girişlerin yapılması durumunda Nomee6 Inc. hiç bir şekilde sorumlu tutulamaz...
             </p>
@@ -212,7 +195,7 @@ if (isset($_POST['submit'])) {
                 <div class="carousel-inner" role="listbox">
 
                     <div class="item active">
-                        <img class="img-responsive" src="./assets/eba.png" alt="First slide">
+                        <img class="img-responsive" src="./assets/eba.png">
                         <div class="carousel-caption card-shadow reveal">
                           
                           <h3>NOMEE6 EĞİTİM</h3>
@@ -233,13 +216,13 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <div class="item">
-                        <img class="img-responsive" src="./assets/ayp.png" alt="First slide">
+                        <img class="img-responsive" src="./assets/ayp.png">
                         <div class="carousel-caption card-shadow reveal">
 
                           <h3>Allah Yönetim Paneli</h3>
                             <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
                               <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                              <span class="sr-only">Önceki</span>
+                              <span class="sr-only">nceki</span>
                             </a>
                             <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
                               <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -250,7 +233,7 @@ if (isset($_POST['submit'])) {
                           </p>
                           
                           <p>
-                            Allah Yönetim Paneli ile dünyayı yönetebilir, lkelerin mülteci seviyelerini yönetebilir, kuranı güncelleyebilir ve daha bir çok şeyi yapabilirsiniz. Sadece Dünya değil, Cennet, Cehennem, Dolar ve bankalarıda yönetebilirsiniz. Bütün güç elinizde!
+                            Allah Yönetim Paneli ile dünyayı ynetebilir, ülkelerin mülteci seviyelerini yönetebilir, kuranı güncelleyebilir ve daha bir çok şeyi yapabilirsiniz. Sadece Dünya değil, Cennet, Cehennem, Dolar ve bankalarıda yönetebilirsiniz. Bütün güç elinizde!
                           </p>
                           <a href="https://ayp.nomee6.xyz" class="btn btn-primary" title="">
                             Allah Yönetim Paneline Git
@@ -258,7 +241,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <div class="item">
-                      <img class="img-responsive" src="./assets/edevlet.jpg" alt="First slide">
+                      <img class="img-responsive" src="./assets/edevlet.jpg">
                       <div class="carousel-caption card-shadow reveal">
 
                         <h3>NOMEE6 EDEVLET</h3>
@@ -279,7 +262,7 @@ if (isset($_POST['submit'])) {
                       </div>
                   </div>
                   <div class="item">
-                      <img class="img-responsive" src="./assets/iskur.jpg" alt="First slide">
+                      <img class="img-responsive" src="./assets/iskur.jpg">
                       <div class="carousel-caption card-shadow reveal">
 
                         <h3>NOMEE6 İŞKUR</h3>
@@ -300,13 +283,13 @@ if (isset($_POST['submit'])) {
                       </div>
                   </div>
                   <div class="item">
-                    <img class="img-responsive" src="./assets/cimer.jpeg" alt="First slide">
+                    <img class="img-responsive" src="./assets/cimer.jpeg">
                     <div class="carousel-caption card-shadow reveal">
 
                       <h3>NOMEE6 CİMER</h3>
                         <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
                           <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                          <span class="sr-only">Önceki</span>
+                          <span class="sr-only">nceki</span>
                         </a>
                         <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
                           <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -319,28 +302,6 @@ if (isset($_POST['submit'])) {
                         Cimere Git
                       </a>
                     </div>
-                </div>
-                <div class="item">
-                      <img class="img-responsive" src="./assets/nomee6evlilik.png" alt="First slide">
-                      <div class="carousel-caption card-shadow reveal">
-
-                        <h3>NOMEE6 Evlilik</h3>
-                          <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
-                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                            <span class="sr-only">Önceki</span>
-                          </a>
-                          <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            <span class="sr-only">Sonraki</span>
-                          </a>
-                        <p>
-                          Nomee6 Evlilik ile aradığınız hayatınzın eşini bulabilirsiniz veya ilikiler kurabilirsiniz. 
-                        </p>
-                        <a href="https://evlilik.nomee6.xyz" class="btn btn-primary" title="">
-                          NOMEE6 Evliliğe Git
-                        </a>
-                      </div>
-                  </div>
                 </div>
             </div>
           </div>
@@ -381,7 +342,7 @@ if (isset($_POST['submit'])) {
                 <div class="carousel-inner" role="listbox">
 
                     <div class="item active">
-                        <img class="img-responsive" src="./assets/bosluk.png" alt="First slide">
+                        <img class="img-responsive" src="./assets/bosluk.png">
                         <div class="carousel-caption card-shadow reveal">
                           
                           <video width="280" height="240" controls loop>
@@ -398,7 +359,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <div class="item">
-                      <img class="img-responsive" src="./assets/bosluk.png" alt="First slide">
+                      <img class="img-responsive" src="./assets/bosluk.png">
                       <div class="carousel-caption card-shadow reveal">
                         
                         <video width="280" height="240" controls loop>
@@ -406,7 +367,7 @@ if (isset($_POST['submit'])) {
                         </video>
                         <a class="left carousel-control" href="#carousel2" role="button" data-slide="prev">
                           <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                          <span class="sr-only">Önceki</span>
+                          <span class="sr-only">nceki</span>
                         </a>
                         <a class="right carousel-control" href="#carousel2" role="button" data-slide="next">
                           <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -415,7 +376,7 @@ if (isset($_POST['submit'])) {
                       </div>
                   </div>
                   <div class="item">
-                    <img class="img-responsive" src="./assets/bosluk.png" alt="First slide">
+                    <img class="img-responsive" src="./assets/bosluk.png">
                     <div class="carousel-caption card-shadow reveal">
                       
                       <video width="280" height="240" controls loop>
@@ -443,7 +404,7 @@ if (isset($_POST['submit'])) {
       <div class="row">
         <div class="col-xs-12 col-md-12">
           <div class="section-container-spacer">
-            <h2 class="text-center">İletişime Ge</h2>
+            <h2 class="text-center">İletişime Geç</h2>
             <p class="text-center">Hata/Bug bildirmek veya Öneri vermek için kullanabilirsiniz.</p>
           </div>
           <div class="card-container">
@@ -487,7 +448,7 @@ if (isset($_POST['submit'])) {
                 <div class="container">
                     <div class="row">
                         <h2 class="text-center">Mobil Uygulama</h2>
-                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende elenebilirsiniz. (Geliştirme aamasındadır.)</p>
+                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdşı içerikler ile internetiniz yokkende elenebilirsiniz. (Geliştirme aamasındadır.)</p>
                         <div class="col-md-5">
                             <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img alt="">APK İndir</a>
                         </div>
@@ -515,7 +476,7 @@ if (isset($_POST['submit'])) {
             <p>
              <small>NOMEE6 Inc. & Nomee6 Devlet Inc.</small>
             
-            <h3>Yararlı Linkler:</h3>
+            <h3>Yararl Linkler:</h3>
             <h4><a href="https://status.nomee6.xyz" style="text-decoration: none">NOMEE6 Status</a></h4>
             <h4><a href="https://nomee6.xyz/privacy" style="text-decoration: none">Gizlilik</a></h4>
             <h4><a href="https://devlet.nomee6.xyz/developer" style="text-decoration: none">E-Devlet Developer Portal</a></h4>
