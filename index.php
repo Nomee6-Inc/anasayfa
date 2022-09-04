@@ -1,46 +1,78 @@
 <?php
+header("X-XSS-Protection: 1; mode=block");
+header("X-Frame-Options: SAMEORIGIN");
+header("X-Content-Type-Options: nosniff");
+
+$siteKey     = ''; 
+$secretKey     = ''; 
 
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $useremail = $_POST['email'];
     $message = $_POST['msg'];
-    $conn = mysqli_connect("localhost", "", "", "");
-    $sql = "INSERT INTO reports (email, title, message)
+    
+    if(empty($title)){ 
+        $valErr .= 'Başlık<br/>'; 
+    }
+    if(empty($useremail) || filter_var($useremail, FILTER_VALIDATE_EMAIL) === false){ 
+        $valErr .= 'E-Posta<br/>'; 
+    }
+    if(empty($message)){ 
+        $valErr .= 'İçerik<br/>'; 
+    }
+    
+    if(empty($valErr)){
+         if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){ 
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']); 
+            $responseData = json_decode($verifyResponse);
+            if($responseData->success){
+                $conn = mysqli_connect("localhost", "", "", "");
+                $sql = "INSERT INTO reports (email, title, message)
 					VALUES ('$useremail', '$title', '$message')";
-    $run_query = mysqli_query($conn, $sql);
-
-    if($run_query) {
-        
-    } else {
-        echo "Bir Hata Oluştu!";
-    };
-};
+                $run_query = mysqli_query($conn, $sql);
+                if($run_query) {
+                    $status = 'success';
+                    $statusMsg = '<div class="alert alert-success" role="alert">Bildiriminizi aldık. Ekibimiz yakın zamanda sizinle iletiime geçecek.</div>';
+                    $postData = '';
+                } else {
+                    $statusMsg = '<div class="alert alert-danger" role="alert">Bir Hata Oluştu!</div>';
+                };
+            }else{ 
+                $statusMsg = '<div class="alert alert-danger" role="alert">Bot doğrulamasını geçemediniz.</div>'; 
+            } 
+        }else{ 
+            $statusMsg = '<div class="alert alert-danger" role="alert">Bot doğrulamasını geçemediniz.</div>'; 
+        } 
+    }else{ 
+        $statusMsg = '<div class="alert alert-danger" role="alert"><p>Lütfen gerekli alanları doldurun:</p>'.trim($valErr, '<br/>')."</div>"; 
+    } 
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta name="description" content="TORBACI">
-    <meta name="author" content="Ali Yasin Yeşilyaprak">
-    <meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
-    <meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
-    <meta name="msapplication-tap-highlight" content="no">
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+	<meta name="description" content="TORBACI">
+	<meta name="author" content="Ali Yasin Yeşilyaprak">
+	<meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
+	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbac, huseyn, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giri, devlet, türkiye, turkey, turkiye">
     <link href="assets/pp.png" rel="shortcut icon" />
     <meta property="og:title" content="Torbaci Huseyin" />
     <meta property="og:description" content="Torbaci Huseyinin Kişisel Websitesi." />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:url" content="https://nomee6.xyz" />
-    <meta property="og:site_name" content="TORBACİ HUSEYİN" />
+    <meta property="og:site_name" content="TORBAC HUSEYİN" />
+    <meta name="yandex-verification" content="df8d69895bdf256d" />
     <meta property="og:image" content="https://nomee6.xyz/assets/A.png" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/pp.png">
     
     <title>TORBACI HUSEYIN</title>
-    <link href="./main.css" rel="stylesheet"></head>
+    <link href="./main.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -74,8 +106,6 @@ if (isset($_POST['submit'])) {
      })();
    </script>
 <!-- End Matomo Code -->
-<script src="https://browser.sentry-cdn.com/6.13.3/bundle.min.js"></script>
-
 <script>
   window.addEventListener('load', function () {
       var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -108,7 +138,7 @@ if (isset($_POST['submit'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.php" title="">
+        <a class="navbar-brand" href="./index" title="">
           <img src="./assets/icon.png" class="navbar-logo-img" alt="">
           TORBACİ HUSEYIN
         </a>
@@ -116,8 +146,9 @@ if (isset($_POST['submit'])) {
 
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="./index.php" title="">Ana Sayfa</a></li>
+          <li><a href="./index" title="">Ana Sayfa</a></li>
           <li><a href="#services" title="" data-target="#services" aria-expanded="false">Hizmetler</a></li>
+          <li><a href="./about" title="" data-target="#services" aria-expanded="">Hakkımızda</a></li>
           <li><a href="old/" title="">Eski Site</a></li>
           <li>
             <p>
@@ -149,7 +180,7 @@ if (isset($_POST['submit'])) {
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
             <h2>Neden Böyle bir websitesi var?</h2>
-            <p>24 Temmuz 2021 tarihinde nedeni bilinmeyen bir şekilde tamamen eğlence amaçlı olarak bu websitesi kurulmuştur. Kısacası Buranın açılma sebebi bilinmiyor. </p>
+            <p>24 Temmuz 2021 tarihinde nedeni bilinmeyen bir şekilde tamamen eğlence amaçlı olarak bu websitesi kurulmuştur. Kısacası Buranın açlma sebebi bilinmiyor. </p>
           </div>
        </div>
       </div>
@@ -162,8 +193,8 @@ if (isset($_POST['submit'])) {
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
             <h2>Resmi Açıklama</h2>
-            <p>Bu websitesi tamamen mizah amaçlı olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır.<br>
-            Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neşriyat kanunları uyarınca 18 yaşından küçüklerin girmesi alışveriş yapması kesinlikle yasaktır.
+            <p>Bu websitesi tamamen mizah amaçlı ve hayal ürünü olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır.<br>
+            Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neriyat kanunları uyarınca 18 yaşından küçüklerin girmesi alışveriş yapması kesinlikle yasaktır.
             Uygunsuz girişlerin yapılması durumunda Nomee6 Inc. hiç bir şekilde sorumlu tutulamaz...
             </p>
           </div>
@@ -215,11 +246,11 @@ if (isset($_POST['submit'])) {
                               <span class="sr-only">Sonraki</span>
                             </a>
                           <p>
-                            Allah Yönetim Paneli ile tüm güç sizin elinizde!
+                            Allah Yönetim Paneli ile tm güç sizin elinizde!
                           </p>
                           
                           <p>
-                            Allah Yönetim Paneli ile dünyayı yönetebilir, ülkelerin mülteci seviyelerini yönetebilir, kuranı güncelleyebilir ve daha bir çok şeyi yapabilirsiniz. Sadece Dünya değil, Cennet, Cehennem, Dolar ve bankalarıda yönetebilirsiniz. Bütün güç elinizde!
+                            Allah Yönetim Paneli ile dünyayı yönetebilir, lkelerin mülteci seviyelerini yönetebilir, kuranı güncelleyebilir ve daha bir çok şeyi yapabilirsiniz. Sadece Dünya değil, Cennet, Cehennem, Dolar ve bankalarıda yönetebilirsiniz. Bütün güç elinizde!
                           </p>
                           <a href="https://ayp.nomee6.xyz" class="btn btn-primary" title="">
                             Allah Yönetim Paneline Git
@@ -240,7 +271,7 @@ if (isset($_POST['submit'])) {
                             <span class="sr-only">Sonraki</span>
                           </a>
                         <p>
-                          Nomee6 E-Devlet ile banka hesabınıza erişebilir, paranızı görüntüleyebilir, A-101'den ürün satın alabilirsiniz. 
+                          Nomee6 E-Devlet ile banka hesabınıza erişebilir, paranızı grüntüleyebilir, A-101'den ürün satn alabilirsiniz. 
                         </p>
                         <a href="https://devlet.nomee6.xyz" class="btn btn-primary" title="">
                           E-Devlete Git
@@ -254,7 +285,7 @@ if (isset($_POST['submit'])) {
                         <h3>NOMEE6 İŞKUR</h3>
                           <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                            <span class="sr-only">Önceki</span>
+                            <span class="sr-only">nceki</span>
                           </a>
                           <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
                             <i class="fa fa-chevron-right" aria-hidden="true"></i>
@@ -303,7 +334,7 @@ if (isset($_POST['submit'])) {
                             <span class="sr-only">Sonraki</span>
                           </a>
                         <p>
-                          Nomee6 Evlilik ile aradığınız hayatınızın eşini bulabilirsiniz veya ilişkiler kurabilirsiniz. 
+                          Nomee6 Evlilik ile aradığınız hayatınzın eşini bulabilirsiniz veya ilikiler kurabilirsiniz. 
                         </p>
                         <a href="https://evlilik.nomee6.xyz" class="btn btn-primary" title="">
                           NOMEE6 Evliliğe Git
@@ -322,13 +353,13 @@ if (isset($_POST['submit'])) {
       <div class="row section-container-spacer">
         <div class="col-xs-12 col-md-12">
           <h2>Geliştiriciler</h2>
-          <p>Bu site geliştirilirken emeği geçen kişilerin bulunduğu bir tablodur.</p>
+          <p>Bu site geliştirilirken emeği geçen kiilerin bulunduğu bir tablodur.</p>
         </div>  
       </div>
       <div class="row">
         <div class="col-xs-12 col-md-4">
           <img src="./assets/yakkl.jpg" alt="" class="reveal img-responsive reveal-content image-center">
-          <h3>Ali Yasin Yeşilyaprak</h3>
+          <h3>Ali Yasin Yeilyaprak</h3>
           <h4>Developer</h4>
           <p>Merhaba! Ben bu sitenin geliştiricisiyim. </p>
           <p>
@@ -412,7 +443,7 @@ if (isset($_POST['submit'])) {
       <div class="row">
         <div class="col-xs-12 col-md-12">
           <div class="section-container-spacer">
-            <h2 class="text-center">İletişime Geç</h2>
+            <h2 class="text-center">İletişime Ge</h2>
             <p class="text-center">Hata/Bug bildirmek veya Öneri vermek için kullanabilirsiniz.</p>
           </div>
           <div class="card-container">
@@ -421,15 +452,17 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                   <div class="col-md-7">
                     <div class="form-group">
-                      <input type="email" class="form-control" name="email" placeholder="E-Posta">
+                      <input type="email" class="form-control" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" placeholder="E-Posta" required>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control" name="title" placeholder="Başlık">
+                      <input type="text" class="form-control" name="title" value="<?php echo !empty($postData['title'])?$postData['title']:''; ?>" placeholder="Başlık" required>
                     </div>
                     <div class="form-group">
-                      <textarea name="msg" class="form-control" rows="3" placeholder="İletiniz"></textarea>
+                      <textarea name="msg" class="form-control" rows="3" placeholder="İletiniz" required><?php echo !empty($postData['msg'])?$postData['msg']:''; ?></textarea>
                     </div>
+                     <div class="g-recaptcha" data-sitekey="<?php echo $siteKey; ?>"></div>
                     <button name="submit" type="submit" class="btn btn-primary">Gönder</button>
+                    <?php echo $statusMsg; ?>
                   </div>
                   <div class="col-md-5">
                     <ul class="list-unstyled address-container">
@@ -454,7 +487,7 @@ if (isset($_POST['submit'])) {
                 <div class="container">
                     <div class="row">
                         <h2 class="text-center">Mobil Uygulama</h2>
-                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende eğlenebilirsiniz. (Geliştirme aşamasındadır.)</p>
+                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende elenebilirsiniz. (Geliştirme aamasındadır.)</p>
                         <div class="col-md-5">
                             <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img alt="">APK İndir</a>
                         </div>
@@ -479,7 +512,8 @@ if (isset($_POST['submit'])) {
 
         <div class="row">
           <div class="col-xs-12 col-sm-7">
-            <p><small>NOMEE6 Inc. & Nomee6 Devlet Inc.</small>
+            <p>
+             <small>NOMEE6 Inc. & Nomee6 Devlet Inc.</small>
             
             <h3>Yararlı Linkler:</h3>
             <h4><a href="https://status.nomee6.xyz" style="text-decoration: none">NOMEE6 Status</a></h4>
@@ -489,7 +523,7 @@ if (isset($_POST['submit'])) {
           </div>
           <div class="col-xs-12 col-sm-5">
             <p class="text-right">
-              <a href="https://github.com/aliyasiny65/nomee6xyz" class="social-round-icon white-round-icon fa-icon" title="">
+              <a href="https://github.com/Nomee6-Inc/anasayfa" class="social-round-icon white-round-icon fa-icon" title="">
                 <i class="fa fa-github" aria-hidden="true"></i>
               </a>
             </p>
@@ -497,7 +531,6 @@ if (isset($_POST['submit'])) {
         </div>
       </div>
     </div>
-  </div>
 </footer>
 
 <script>
