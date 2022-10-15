@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
                 $run_query = mysqli_query($conn, $sql);
                 if($run_query) {
                     $status = 'success';
-                    $statusMsg = '<div class="alert alert-success" role="alert">Bildiriminizi aldık. Ekibimiz yakın zamanda sizinle iletiime geçecek.</div>';
+                    $statusMsg = '<div class="alert alert-success" role="alert">Bildiriminizi aldık. Ekibimiz yakın zamanda sizinle iletişime geçecek.</div>';
                     $postData = '';
                 } else {
                     $statusMsg = '<div class="alert alert-danger" role="alert">Bir Hata Oluştu!</div>';
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 	<meta name="description" content="TORBACI">
 	<meta name="author" content="Ali Yasin Yeşilyaprak">
 	<meta name="copyright" content="Nomee6 Inc., https://nomee6.xyz">
-	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbacı, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
+	<meta name="keywords" content="huseyin, torbacihüseyin, torbaci, torbac, huseyın, nomee6, nomee6.xyz, nomee6 xyz, nomee6xyz, torba, egitim, eba, edevlet, işkur, işkur giriş, devlet, türkiye, turkey, turkiye">
     <link href="assets/pp.png" rel="shortcut icon" />
     <meta property="og:title" content="Torbaci Huseyin" />
     <meta property="og:description" content="Torbaci Huseyinin Kişisel Websitesi." />
@@ -72,6 +72,8 @@ if (isset($_POST['submit'])) {
     
     <title>TORBACI HUSEYIN</title>
     <link href="./main.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4237171056461403"
+     crossorigin="anonymous"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
    <!-- Matomo -->
    <script>
@@ -131,7 +133,7 @@ if (isset($_POST['submit'])) {
         <ul class="nav navbar-nav navbar-right">
           <li><a href="./index" title="">Ana Sayfa</a></li>
           <li><a href="#services" title="" data-target="#services" aria-expanded="false">Hizmetler</a></li>
-          <li><a href="./about" title="" data-target="#services" aria-expanded="">Hakkımızda</a></li>
+          <li><a href="./about" title="">Hakkımızda</a></li>
           <li><a href="old/" title="">Eski Site</a></li>
           <li>
             <p>
@@ -156,28 +158,14 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
   </div>
-
   <div class="section-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
           <div class="text-center">
-            <h2>Neden Böyle bir websitesi var?</h2>
-            <p>24 Temmuz 2021 tarihinde nedeni bilinmeyen bir şekilde tamamen eğlence amaçlı olarak bu websitesi kurulmuştur. Kısacası Buranın açılma sebebi bilinmiyor. </p>
-          </div>
-       </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <div class="text-center">
-            <h2>Resmi Açklama</h2>
-            <p>Bu websitesi tamamen mizah amaçlı ve hayal ürünü olup, hiçbir kurum, kuruluş, kişi veya örgtü hedef almamaktadır.<br>
-            Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neşriyat kanunları uyarınca 18 yaşından küçüklerin girmesi alışveriş yapması kesinlikle yasaktır.
+            <h2>Resmi Açıklama</h2>
+            <p>Bu websitesi tamamen mizah amaçlı ve hayal ürünü olup, hiçbir kurum, kuruluş, kişi veya örgütü hedef almamaktadır.<br>
+            Bu site bir porno sitesi olmamakla beraber, içeriğinde müstehcenlik ihtiva eden içerikler bulunmaktadır. Bu sebepten 1117 muzir ve neşriyat kanunları uyarınca 18 yaşından küçüklerin girmesi kesinlikle yasaktır.
             Uygunsuz girişlerin yapılması durumunda Nomee6 Inc. hiç bir şekilde sorumlu tutulamaz...
             Eğer 18 yaşından küçük bir bireyin velisi iseniz <a href="mailto:torbacihuseyin@nomee6.xyz">torbacihuseyin@nomee6.xyz</a> adresinden derhal bizimle iletişime geçin.
             </p>
@@ -245,7 +233,7 @@ if (isset($_POST['submit'])) {
                       <img class="img-responsive" src="./assets/edevlet.jpg">
                       <div class="carousel-caption card-shadow reveal">
 
-                        <h3>NOMEE6 EDEVLET</h3>
+                        <h3>NOMEE6 E-Devlet</h3>
                           <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
                             <i class="fa fa-chevron-left" aria-hidden="true"></i>
                             <span class="sr-only">Önceki</span>
@@ -255,7 +243,7 @@ if (isset($_POST['submit'])) {
                             <span class="sr-only">Sonraki</span>
                           </a>
                         <p>
-                          Nomee6 E-Devlet ile banka hesabınıza erişebilir, paranızı görüntüleyebilir, A-101'den ürün satın alabilirsiniz. 
+                          Nomee6 E-Devlet ile banka hesabınıza erişebilir, paranızı görüntüleyebilirsiniz ve diğer resmi işlemlerinizi gerçekleştirebilirsiniz.
                         </p>
                         <a href="https://devlet.nomee6.xyz" class="btn btn-primary" title="">
                           E-Devlete Git
@@ -309,6 +297,7 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
   </div>
+</div>
 
   <div class="section-container">
     <div class="container text-center">
@@ -444,20 +433,6 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
   </div>
-  
-              <section class="section-container">
-                <div class="container">
-                    <div class="row">
-                        <h2 class="text-center">Mobil Uygulama</h2>
-                        <p class="text-center">Mobil Uygulamamız ile birçok servisimize daha kolay erişebilir çevrimdışı içerikler ile internetiniz yokkende eğlenebilirsiniz. (Geliştirme aşamasındadır.)</p>
-                        <div class="col-md-5">
-                            <a href="apks/nomee6-mobile1.0.apk" class="btn btn-primary"><img alt="">APK İndir</a>
-                        </div>
-                    </div>
-
-                    <img src="assets/mobilapp.png" alt="" class="reveal img-responsive reveal-content image-center">
-                </div>
-            </section>
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
     navbarFixedTopAnimation();
@@ -467,21 +442,17 @@ if (isset($_POST['submit'])) {
 <footer class="footer-container white-text-container">
   <div class="container">
     <div class="row">
-
-     
       <div class="col-xs-12">
         <h3>TORBACİ HUSEYİN</h3>
-
         <div class="row">
           <div class="col-xs-12 col-sm-7">
             <p>
              <small>NOMEE6 Inc. & Nomee6 Devlet Inc.</small>
-            
-            <h3>Yararl Linkler:</h3>
-            <h4><a href="https://status.nomee6.xyz" style="text-decoration: none">NOMEE6 Status</a></h4>
+            </p>
+			<h3>Yararlı Linkler:</h3>
+			<h4><a href="https://status.nomee6.xyz" style="text-decoration: none">NOMEE6 Status</a></h4>
             <h4><a href="https://nomee6.xyz/privacy" style="text-decoration: none">Gizlilik</a></h4>
             <h4><a href="https://devlet.nomee6.xyz/developer" style="text-decoration: none">E-Devlet Developer Portal</a></h4>
-            </p>
           </div>
           <div class="col-xs-12 col-sm-5">
             <p class="text-right">
@@ -493,6 +464,7 @@ if (isset($_POST['submit'])) {
         </div>
       </div>
     </div>
+</div>
 </footer>
 
 <script>
